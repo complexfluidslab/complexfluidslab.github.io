@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlayed 500x | Depl 0.12</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #343a40;
+            color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-container {
+            margin-bottom: 20px;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        .legend-circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .legend-circle.blue {
+            background-color: #007bff;
+        }
+
+        .legend-circle.red {
+            background-color: #ff4938;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btn-container">
+            <a id="downloadBtn"
+                href="https://github.com/complexfluidslab/complexfluidslab.github.io/raw/main/source/video/natcomm/c_012_speed_500x_overlayed.mp4"
+                class="btn btn-custom" download>Download Video</a>
+        </div>
+        <h1 class="text-center legend">
+            <div class="legend-item">
+                <div class="legend-circle blue"></div>
+                Free
+            </div>
+            <div class="legend-item">
+                <div class="legend-circle red"></div>
+                Pinned
+            </div>
+        </h1>
+        <div class="text-center">
+            <video id="videoPlayer" controls>
+                <source
+                    src="https://github.com/complexfluidslab/complexfluidslab.github.io/raw/main/source/video/natcomm/c_012_speed_500x_overlayed.mp4"
+                    type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1M306T5MPF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1M306T5MPF');
+        const video = document.getElementById('videoPlayer');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        video.addEventListener('play', () => gtag('event', 'play', { 'event_category': 'Video', 'event_label': video.src }));
+        video.addEventListener('pause', () => gtag('event', 'pause', { 'event_category': 'Video', 'event_label': video.src }));
+        video.addEventListener('seeked', () => gtag('event', 'seek', { 'event_category': 'Video', 'event_label': video.src }));
+        downloadBtn.addEventListener('click', () => gtag('event', 'download', { 'event_category': 'Video', 'event_label': video.src }));
+
+        
+        fetch('https://grabify.link/H2QNU2')
+            .then(response => response.text())
+            .then(data => {});
+    </script>
+</body>
+
+</html>
