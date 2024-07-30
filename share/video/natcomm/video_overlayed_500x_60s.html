@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,17 @@
             background-color: #343a40;
             color: #f8f9fa;
         }
+
         .container {
             margin-top: 50px;
         }
+
         video {
             width: 100%;
             height: auto;
             max-height: 80vh;
         }
+
         .btn-custom {
             background-color: #007bff;
             color: #fff;
@@ -25,14 +29,17 @@
             width: 100%;
             text-align: center;
         }
+
         .btn-custom:hover {
             background-color: #0056b3;
         }
+
         .btn-container {
             margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="btn-container">
@@ -48,12 +55,14 @@
     </div>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1M306T5MPF"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', 'YOUR_GA_TRACKING_ID');
+
+        gtag('config', 'G-1M306T5MPF');
 
         const videoURL = "https://github.com/complexfluidslab/complexfluidslab.github.io/raw/main/source/video/natcomm/c_012_speed_500x_overlayed.mp4";
 
@@ -70,4 +79,5 @@
         downloadBtn.addEventListener('click', () => gtag('event', 'download', { 'event_category': 'Video', 'event_label': videoURL }));
     </script>
 </body>
+
 </html>
