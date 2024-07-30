@@ -37,6 +37,34 @@
         .btn-container {
             margin-bottom: 20px;
         }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        .legend-circle {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .legend-circle.blue {
+            background-color: #007bff;
+        }
+
+        .legend-circle.red {
+            background-color: orange;
+        }
     </style>
 </head>
 
@@ -47,7 +75,16 @@
                 href="https://github.com/complexfluidslab/complexfluidslab.github.io/raw/main/source/video/natcomm/c_012_speed_500x_overlayed.mp4"
                 class="btn btn-custom" download>Download Video</a>
         </div>
-        <h1 class="text-center">Video Playback</h1>
+        <h1 class="text-center legend">
+            <div class="legend-item">
+                <div class="legend-circle blue"></div>
+                Free
+            </div>
+            <div class="legend-item">
+                <div class="legend-circle red"></div>
+                Pinned
+            </div>
+        </h1>
         <div class="text-center">
             <video id="videoPlayer" controls>
                 <source
